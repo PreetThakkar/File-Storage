@@ -18,7 +18,7 @@ File Storage System is website that allows user to store their data online on cl
 
 ![Success](Screenshots/Upload_Page_2.png)
 
-###Setting up  
+### Setting up  
 * Create a python virtual environment, and install the requirements using 'pip install -r requirements.txt'
 * To query and view the data stored, Open a terminal in the File-Storage folder
   * from Filestorage import db
