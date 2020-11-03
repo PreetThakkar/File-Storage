@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <form enctype="multipart/form-data" action="{{ url_for("upload") }}" method="post">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Upload a File</h5>
+                        <p class="card-text">
+                            <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+                        </p>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-9">
+            <div class="card">
+                <div class="card-body">
+                    {% if files %}
+                        <ul class="list-group">
+                            {% for file, path in files.items() %}
+                                <li class="list-group-item">
+                                    <nav class="nav">
+                                        <a class="nav-link col-md-8" href="/home/{{ file }}">{{ file }}</a>
+                                        <div class="btn-toolbar col-9 col-md-4" role="toolbar" aria-label="Toolbar with button groups">
+                                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                                                <a class="btn btn-outline-success" href="/home/download/{{ file }}">Download</a>
+                                            </div>
+                                            <div class="btn-group mr-2" role="group" aria-label="Second group">
+                                                <a class="btn btn-outline-danger" href="/home/delete/{{ file }}">Delete</a>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}

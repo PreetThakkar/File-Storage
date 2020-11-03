@@ -1,0 +1,1 @@
+This is temporary storage. Files from here are transferred to respective folder in 'uploads'.

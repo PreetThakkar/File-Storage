@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="col-md-8">
+    <div class="container">
+         <!-- Add icon library -->
+            <div class="card bg-light p-1" style="width: 18rem;">
+                <br><br><br>
+                <img class="card-img-top rounded-circle w-50 ml-auto mr-auto" src="{{ url_for('static', filename='profile.jpg') }}" alt="Card image cap">
+                <div class="card-body">
+                <h5 class="card-title text-center font-weight-bold">{{ current_user.username }}</h5>
+                <p class="card-text text-center">{{ current_user.email }}</p>
+                <p class="card-text text-center">A/C status: <span class="badge badge-success">Active</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
